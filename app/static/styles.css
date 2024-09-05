@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'draft_b_regular';
+    src: url('fonts/draftb_regular/draft_b_regular-webfont.woff2') format('woff2'),
+         url('fonts/draftb_regular/draft_b_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ico{
+    border-radius: 2px;
+}
+.nav_colors {
+    background-color: #282828;
+}
+
+.nav_colors .navbar-brand {
+    color: whitesmoke;
+}
+
+.random {
+    color: darkslategrey;
+}
+
+body {
+    padding-top: 30px;
+    margin: 0;
+    background-color: #b8c3e9;
+    color: rgb(255, 255, 255);
+    font-family: 'draft_b_regular', sans-serif;
+}
+
+.text_shading {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.img_border {
+    border-style: solid;
+    border-color: #f6f6f6;
+    border-width: 1.5px;
+}
+
+#searchBox {
+    position: relative;
+}
+
+#searchBox.autocomplete-active:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#suggestions {
+    width: 100%;
+    left: 0;
+    top: 100%;
+    overflow-y: auto;
+    border: none;
+    position: absolute;
+    z-index: 1000;
+}
+
+#suggestions .list-group-item:hover {
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+.artist_img {
+    width: 150px;
+    border-style: solid;
+    border-color: #282828;
+    border-width: 1px;
+    border-radius: 12px;
+}
+
+.spotify_logo{
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 6px;
+    padding: 10px;
+}

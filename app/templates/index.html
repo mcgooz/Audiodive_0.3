@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Audiodive
+{% endblock %}
+
+{% block main %}
+<div class="container mt-5 p-5">
+    <div class="row mb-3">
+        <div class="col">
+            <form id="searchForm" action="/search" method="GET" class="position-relative mt-3">
+                <input id="searchBox" autocomplete="off" autofocus class="form-control" name="query" placeholder="Search for a track or artist" type="text">
+                <ul id="suggestions" class="list-group position-absolute" style="width: auto"></ul>
+            </form>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <form action="/random" id="random" method="POST">   
+                <button type="submit" class="btn btn-outline-light">Random Track</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+{% endblock %}
