@@ -64,7 +64,9 @@ Next we have the HTML files. Each page has a fixed navigation bar that includes 
 
 - *login.html* is the first page we see if we're not logged in, and it simply prompts us to log in via Spotify. This button will redirect you to the Spotify login page and then return you to *index.html*.   
 
-- Lastly, we have *result.html*. This is where you'll find your search result with all the juicy details, an embedded Spotify web player, and the evolving colourful background. There's also a pair of buttons to let you find a similar track or try another random track.
+- *result.html* is where we find our search result with all the juicy details, an embedded Spotify web player, and the evolving colourful background. There's also a pair of buttons to let you find a similar track or try another random track.
+
+- Lastly, we have *error.html*. This page will appear if the app runs into an issue with retrieving data from the API (usually due to rate limiting). In order to prevent an exception killing the program, this page will appear and notify the user of the issue, advising that they try again later, with a button to redirect them to the home page.
 
 ##### Static Files
 The static folder contains assests, CSS and a short JavaScript file.
