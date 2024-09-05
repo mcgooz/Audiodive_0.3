@@ -54,7 +54,7 @@ def random_track():
     random_result = search.random_search(
         query, search_type="track", market=random_market
     )
-    track_id = [track["id"] for track in random_result["tracks"]["items"]] # List of 25 track IDs
+    track_id = [track["id"] for track in random_result["tracks"]["items"]] # List of track IDs
     random_track = random.choice(track_id) # Randomly select a track ID from list
     return random_track # Return randomly selected track ID
 
