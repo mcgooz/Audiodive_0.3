@@ -1,8 +1,6 @@
 # Audiodive
 
 ## Description:
-This was my final project for CS50X 2024. (The source code should not be copied by those taking the same course!)
-
 Audiodive is a web app that utilises the Spotify API (via Spotipy) to search for and play tracks, adding additional details and aesthetics that aren't found in the Spotify mobile or desktop apps. 
 
 Currently still in dev stage, a Spotify developer account is required for full functionality.
