@@ -1,5 +1,8 @@
 # Audiodive
 
+Update 27/11/24
+Spotify has announced that a number of API endpoints, that this app depends on, are no longer available. Therefore, for the time being, Audiodive is non-functional :(
+
 ## Description:
 Audiodive is a web app that utilises the Spotify API (via Spotipy) to search for and play tracks, adding additional details and aesthetics that aren't found in the Spotify mobile or desktop apps. 
 
