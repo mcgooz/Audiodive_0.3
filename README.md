@@ -1,6 +1,6 @@
 # Audiodive
 
-Update 27/11/24
+## Update 27/11/24
 Spotify has announced that a number of API endpoints, that this app depends on, are no longer available. Therefore, for the time being, Audiodive is non-functional :(
 
 ## Description:
