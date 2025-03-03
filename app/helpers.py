@@ -59,43 +59,44 @@ def random_track():
     return random_track # Return randomly selected track ID
 
 
-def get_key_signature(features):
-    pitch_classes = {
-        0: "C",
-        1: "C♯/D♭",
-        2: "D",
-        3: "D♯/E♭",
-        4: "E",
-        5: "F",
-        6: "F♯/G♭",
-        7: "G",
-        8: "G♯/A♭",
-        9: "A",
-        10: "A♯/B♭",
-        11: "B",
-    }
-    key = features.get("key", -1)
-    mode = features.get("mode", 0)
-    if key == -1:
-        return "No key detected"
-    pitch = pitch_classes.get(key, "Unknown")
-    scale = "major" if mode == 1 else "minor"
-    return f"{pitch} {scale}"
+# Deprecated
+# def get_key_signature(features):
+#     pitch_classes = {
+#         0: "C",
+#         1: "C♯/D♭",
+#         2: "D",
+#         3: "D♯/E♭",
+#         4: "E",
+#         5: "F",
+#         6: "F♯/G♭",
+#         7: "G",
+#         8: "G♯/A♭",
+#         9: "A",
+#         10: "A♯/B♭",
+#         11: "B",
+#     }
+#     key = features.get("key", -1)
+#     mode = features.get("mode", 0)
+#     if key == -1:
+#         return "No key detected"
+#     pitch = pitch_classes.get(key, "Unknown")
+#     scale = "major" if mode == 1 else "minor"
+#     return f"{pitch} {scale}"
 
+# Deprecated
+# def get_loudness(features):
+#     loudness = features.get("loudness")
+#     return f"{loudness:.1f} dB"
 
-def get_loudness(features):
-    loudness = features.get("loudness")
-    return f"{loudness:.1f} dB"
+# Deprecated
+# def get_time_sig(features):
+#     time_sig = features.get("time_signature")
+#     return f"{time_sig}/4"
 
-
-def get_time_sig(features):
-    time_sig = features.get("time_signature")
-    return f"{time_sig}/4"
-
-
-def get_bpm(features):
-    bpm = features.get("tempo")
-    return bpm
+# Deprecated
+# def get_bpm(features):
+#     bpm = features.get("tempo")
+#     return bpm
 
 
 def get_artist_image(track_id):
@@ -114,108 +115,109 @@ def get_artist_genre(track_id):
     genres = artist_data["genres"][:5]
     return genres
 
+# Deprecated
+# def get_new_track(track_id):
+#     new_track_data = search.get_track_recommendation(track_id)
+#     new_track = new_track_data["tracks"][0]["id"]
+#     return new_track
 
-def get_new_track(track_id):
-    new_track_data = search.get_track_recommendation(track_id)
-    new_track = new_track_data["tracks"][0]["id"]
-    return new_track
+# Deprecated
+# def get_related_artists(track_id):
+#     related_artists_data = search.get_related_artists(track_id)
+#     related_artists = [artist["name"] for artist in related_artists_data["artists"]][:5]
+#     return related_artists
 
+# Deprecated
+# def get_valence(features):
+#     valence = features.get("valence")
+#     print(f"Valence: {valence}")
+#     if valence <= 0.125:
+#         return "V1"
+#     elif 0.125 < valence <= 0.250:
+#         return "V2"
+#     elif 0.250 < valence <= 0.375:
+#         return "V3"
+#     elif 0.375 < valence <= 0.500:
+#         return "V4"
+#     elif 0.500 < valence <= 0.625:
+#         return "V5"
+#     elif 0.625 < valence <= 0.750:
+#         return "V6"
+#     elif 0.750 < valence <= 0.875:
+#         return "V7"
+#     elif valence > 0.875:
+#         return "V8"
 
-def get_related_artists(track_id):
-    related_artists_data = search.get_related_artists(track_id)
-    related_artists = [artist["name"] for artist in related_artists_data["artists"]][:5]
-    return related_artists
+# Deprecated
+# def get_energy(features):
+#     energy = features.get("energy")
+#     print(f"Energy: {energy}")
+#     if energy <= 0.125:
+#         return "E1"
+#     elif 0.125 < energy <= 0.250:
+#         return "E2"
+#     elif 0.250 < energy <= 0.375:
+#         return "E3"
+#     elif 0.375 < energy <= 0.500:
+#         return "E4"
+#     elif 0.500 < energy <= 0.625:
+#         return "E5"
+#     elif 0.625 < energy <= 0.750:
+#         return "E6"
+#     elif 0.750 < energy <= 0.875:
+#         return "E7"
+#     elif energy > 0.875:
+#         return "E8"
 
-
-def get_valence(features):
-    valence = features.get("valence")
-    print(f"Valence: {valence}")
-    if valence <= 0.125:
-        return "V1"
-    elif 0.125 < valence <= 0.250:
-        return "V2"
-    elif 0.250 < valence <= 0.375:
-        return "V3"
-    elif 0.375 < valence <= 0.500:
-        return "V4"
-    elif 0.500 < valence <= 0.625:
-        return "V5"
-    elif 0.625 < valence <= 0.750:
-        return "V6"
-    elif 0.750 < valence <= 0.875:
-        return "V7"
-    elif valence > 0.875:
-        return "V8"
-
-
-def get_energy(features):
-    energy = features.get("energy")
-    print(f"Energy: {energy}")
-    if energy <= 0.125:
-        return "E1"
-    elif 0.125 < energy <= 0.250:
-        return "E2"
-    elif 0.250 < energy <= 0.375:
-        return "E3"
-    elif 0.375 < energy <= 0.500:
-        return "E4"
-    elif 0.500 < energy <= 0.625:
-        return "E5"
-    elif 0.625 < energy <= 0.750:
-        return "E6"
-    elif 0.750 < energy <= 0.875:
-        return "E7"
-    elif energy > 0.875:
-        return "E8"
-
-
-def get_danceability(features):
-    danceability = features.get("danceability")
-    print(f"Dance: {danceability}")
-    if danceability <= 0.125:
-        return "D1"
-    elif 0.125 < danceability <= 0.250:
-        return "D2"
-    elif 0.250 < danceability <= 0.375:
-        return "D3"
-    elif 0.375 < danceability <= 0.500:
-        return "D4"
-    elif 0.500 < danceability <= 0.625:
-        return "D5"
-    elif 0.625 < danceability <= 0.750:
-        return "D6"
-    elif 0.750 < danceability <= 0.875:
-        return "D7"
-    elif danceability > 0.875:
-        return "D8"
-
-
-def get_tempo(features):
-    tempo = features.get("tempo")
-    print(f"Tempo: {tempo}")
-    if tempo < 70:
-        return "T1"
-    elif 70 < tempo <= 90:
-        return "T2"
-    elif 90 < tempo <= 110:
-        return "T3"
-    elif 110 < tempo <= 130:
-        return "T4"
-    elif 130 < tempo <= 150:
-        return "T5"
-    elif 150 < tempo <= 170:
-        return "T6"
-    elif 170 < tempo <= 190:
-        return "T7"
-    elif tempo > 190:
-        return "T8"
+# Deprecated
+# def get_danceability(features):
+#     danceability = features.get("danceability")
+#     print(f"Dance: {danceability}")
+#     if danceability <= 0.125:
+#         return "D1"
+#     elif 0.125 < danceability <= 0.250:
+#         return "D2"
+#     elif 0.250 < danceability <= 0.375:
+#         return "D3"
+#     elif 0.375 < danceability <= 0.500:
+#         return "D4"
+#     elif 0.500 < danceability <= 0.625:
+#         return "D5"
+#     elif 0.625 < danceability <= 0.750:
+#         return "D6"
+#     elif 0.750 < danceability <= 0.875:
+#         return "D7"
+#     elif danceability > 0.875:
+#         return "D8"
 
 
-def get_gradient(features):
-    valence = color_palettes.get(get_valence(features))
-    energy = color_palettes.get(get_energy(features))
-    danceability = color_palettes.get(get_danceability(features))
-    tempo = color_palettes.get(get_tempo(features))
+# Deprecated
+# def get_tempo(features):
+#     tempo = features.get("tempo")
+#     print(f"Tempo: {tempo}")
+#     if tempo < 70:
+#         return "T1"
+#     elif 70 < tempo <= 90:
+#         return "T2"
+#     elif 90 < tempo <= 110:
+#         return "T3"
+#     elif 110 < tempo <= 130:
+#         return "T4"
+#     elif 130 < tempo <= 150:
+#         return "T5"
+#     elif 150 < tempo <= 170:
+#         return "T6"
+#     elif 170 < tempo <= 190:
+#         return "T7"
+#     elif tempo > 190:
+#         return "T8"
 
-    gradient = f"linear-gradient(45deg, {valence}, {energy}, {danceability}, {tempo})"
-    return gradient
+# Deprecated
+# def get_gradient(features):
+#     valence = color_palettes.get(get_valence(features))
+#     energy = color_palettes.get(get_energy(features))
+#     danceability = color_palettes.get(get_danceability(features))
+#     tempo = color_palettes.get(get_tempo(features))
+
+#     gradient = f"linear-gradient(45deg, {valence}, {energy}, {danceability}, {tempo})"
+#     return gradient

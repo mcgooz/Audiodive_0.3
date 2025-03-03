@@ -67,13 +67,13 @@ def search_suggestions():
 @dataclass
 class TrackDetails:
     track_id: str
-    key: str
-    bpm: float
-    loudness: float
-    gradient: float
+    # key: str
+    # bpm: float
+    # loudness: float
+    # gradient: float
     image: str
     genres: list
-    related_artists: list
+    # related_artists: list
     data: dict
 
 
@@ -81,17 +81,17 @@ class TrackDetails:
 def show_result(track_id):
     try:
         data = search.get_track_data(track_id)
-        features = data["features"][0]
+        # features = data["features"][0]
 
         track_details = TrackDetails(
             track_id=track_id,
-            key=get_key_signature(features),
-            bpm=get_bpm(features),
-            loudness=get_loudness(features),
-            gradient=get_gradient(features),
+            # key=get_key_signature(features),
+            # bpm=get_bpm(features),
+            # loudness=get_loudness(features),
+            # gradient=get_gradient(features),
             image=get_artist_image(track_id),
             genres=get_artist_genre(track_id),
-            related_artists=get_related_artists(track_id),
+            # related_artists=get_related_artists(track_id),
             data=data,
         )
 
@@ -108,11 +108,11 @@ def random():
     return redirect(url_for("show_result", track_id=track_id))
 
 
-@app.route("/recommend", methods=["POST"])
-def recommend():
-    track_id = request.form.get("track_id")
-    new_track_id = get_new_track(track_id)
-    return redirect(url_for("show_result", track_id=new_track_id))
+# @app.route("/recommend", methods=["POST"])
+# def recommend():
+#     track_id = request.form.get("track_id")
+#     new_track_id = get_new_track(track_id)
+#     return redirect(url_for("show_result", track_id=new_track_id))
 
 
 @app.template_filter("format_mmss")
