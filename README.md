@@ -2,7 +2,8 @@
 
 
 ## Update 03/03/25
-I've fixed the app, removing all the deprecated features. You can now search for tracks or get a random track.
+I've fixed the app, removing all the deprecated features. You can now search for tracks or get a random track. 
+You can still see the original version of the app in the [main](https://github.com/mcgooz/Audiodive/tree/main) branch. 
 
 ## Update 27/11/24
 Spotify has announced that a number of API endpoints, that this app depends on, are no longer available.
