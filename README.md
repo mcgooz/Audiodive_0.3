@@ -1,5 +1,7 @@
 # Audiodive
 
+## Update 19/03/26  
+Due to recent Spotify API restrictions (February 2026), this app is no longer functional. I'm keeping the repository up as a reference for the code and structure.
 
 ## Update 03/03/25
 I've fixed the app, removing all the deprecated features. You can now search for tracks or get a random track. 
